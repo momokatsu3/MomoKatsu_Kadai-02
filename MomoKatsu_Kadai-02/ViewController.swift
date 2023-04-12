@@ -13,14 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var textField1: UITextField!
     @IBOutlet weak var textField2: UITextField!
 
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+
     // 計算結果表示用のラベルを設定
     @IBOutlet weak var calculationResultLabel: UILabel!
-    
-    // SegmentedControlで選択された演算子を選定するフラゲ
-    // ＋：１　ー：２　×：３　÷：４
-    var calculateFlg: Int = 1   // 何も選択しない場合、デフォルトとして ＋：１を初期設定
-    // SegmentedControlで選択された演算子を設定
-    var calculateArithmetic: String = "＋"   // 何も選択しない場合、デフォルトとして"＋"を初期設定
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,20 +42,6 @@ class ViewController: UIViewController {
         textField2.keyboardType = UIKeyboardType.numbersAndPunctuation
     }
 
-    
-    // 【Swift】Segmented Controlの使い方。選択肢の中からどれか1つを選択するボタンを作る。
-    // https://hajihaji-lemon.com/swift/segmented-control/
-    // 【Swift 】Segmented Controlを使おう
-    // https://qiita.com/littleossa/items/49bd25d646bd696d24dd
-    // 【Swift5】Segmented Controllerの使い方〜超初心者にもわかるようにたくさん画像を使っています。〜
-    // https://satoriku.com/segmented-controller/
-    //　SegmentedControllerで選択されている算術演算子を選定
-    @IBAction func actionSegmentedControl(_ sender: UISegmentedControl) {
-        // 選択されたボタンのタイトルを取得する
-        calculateArithmetic = sender.titleForSegment(at: sender.selectedSegmentIndex)!
-        //print( "'" , calculateArithmetic, "'" )
-    }
-        
     // 計算開始ボタンのクリックにより、選択演算子により掲載後、ラベルに計算結果を表示する。
     @IBAction func calculationStart(_ sender: Any) {
         
@@ -68,6 +50,8 @@ class ViewController: UIViewController {
         var hensuData_1: Double = 0.0
         var hensuData_2: Double = 0.0
         
+        let calculateArithmetic = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)!
+
         print( "選択演算子：'" , calculateArithmetic, "'" )
         print( "hensu_1 =", textField1.text! , " hensu_2 =", textField2.text! )
         

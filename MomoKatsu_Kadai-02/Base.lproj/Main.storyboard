@@ -69,9 +69,6 @@
                                     <segment title="÷"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" systemColor="systemCyanColor"/>
-                                <connections>
-                                    <action selector="actionSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="0jv-Jl-g08"/>
-                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -91,6 +88,7 @@
                     </view>
                     <connections>
                         <outlet property="calculationResultLabel" destination="oa7-Bn-tIY" id="YS0-NF-VYQ"/>
+                        <outlet property="segmentedControl" destination="hbG-VS-dfO" id="PLf-VG-8mg"/>
                         <outlet property="textField1" destination="zTv-GZ-XsI" id="DGU-aR-6Hx"/>
                         <outlet property="textField2" destination="qzf-Ce-7Cj" id="ULy-Li-2z0"/>
                     </connections>
