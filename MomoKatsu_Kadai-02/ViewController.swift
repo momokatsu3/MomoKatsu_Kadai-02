@@ -10,8 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     
     // テキストフィールドを設定
-    @IBOutlet weak var hensu_1: UITextField!
-    @IBOutlet weak var hensu_2: UITextField!
+    @IBOutlet weak var textField1: UITextField!
+    @IBOutlet weak var textField2: UITextField!
 
     // 計算結果表示用のラベルを設定
     @IBOutlet weak var CalculationResults: UILabel!
@@ -25,14 +25,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // テキストフィールドを初期化
-        hensu_1.text = ""
-        hensu_2.text = ""
+        textField1.text = ""
+        textField2.text = ""
         
         //↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
         //  【Swift】キーボードと一緒にViewも上げる方法
         //  https://orangelog.site/swift/slide-view-with-keyboard/
-        self.hensu_1.delegate = self
-        self.hensu_2.delegate = self
+        self.textField1.delegate = self
+        self.textField2.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -42,8 +42,8 @@ class ViewController: UIViewController {
         // 各textFieldでクリックした際にキーボードタイプを数字のみに変更する
         // numberPad や decimalPad を使用すると、Can't find keyplane that supports type 4 for keyboardが
         // 表示されるので、以下の numbersAndPunctuation に変更した。
-        hensu_1.keyboardType = UIKeyboardType.numbersAndPunctuation
-        hensu_2.keyboardType = UIKeyboardType.numbersAndPunctuation
+        textField1.keyboardType = UIKeyboardType.numbersAndPunctuation
+        textField2.keyboardType = UIKeyboardType.numbersAndPunctuation
     }
 
     
@@ -69,14 +69,14 @@ class ViewController: UIViewController {
         var hensuData_2: Double = 0.0
         
         print( "選択演算子：'" , calculateArithmetic, "'" )
-        print( "hensu_1 =", hensu_1.text! , " hensu_2 =", hensu_2.text! )
+        print( "hensu_1 =", textField1.text! , " hensu_2 =", textField2.text! )
         
         // テキストフィールドに入力文字がある場合は、数値に変換する。
-        if hensu_1.text! != "" {
-            hensuData_1 = Double( hensu_1.text! )!
+        if textField1.text! != "" {
+            hensuData_1 = Double( textField1.text! )!
         }
-        if hensu_2.text! != "" {
-            hensuData_2 = Double( hensu_2.text! )!
+        if textField2.text! != "" {
+            hensuData_2 = Double( textField2.text! )!
         }
         
         // SegmentedControlで選択された演算子により計算
