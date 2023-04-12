@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var textField2: UITextField!
 
     // 計算結果表示用のラベルを設定
-    @IBOutlet weak var CalculationResults: UILabel!
+    @IBOutlet weak var calculationResultLabel: UILabel!
     
     // SegmentedControlで選択された演算子を選定するフラゲ
     // ＋：１　ー：２　×：３　÷：４
@@ -95,12 +95,12 @@ class ViewController: UIViewController {
         
         // 計算結果表示用のラベルに表示
         if calculateArithmetic != "÷" { //}&& hensuData_2 != 0 {
-            CalculationResults.text = "計算結果：" + String( totalData )
+            calculationResultLabel.text = "計算結果：" + String( totalData )
         // 除数が０の場合
         } else if hensuData_2 != 0 {
-            CalculationResults.text = "計算結果：" + String( totalData )
+            calculationResultLabel.text = "計算結果：" + String( totalData )
         } else {
-            CalculationResults.text = "割る数には０以外を入力して下さい"
+            calculationResultLabel.text = "割る数には０以外を入力して下さい"
         }
         
     }

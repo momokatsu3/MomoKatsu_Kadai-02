@@ -90,7 +90,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="CalculationResults" destination="oa7-Bn-tIY" id="Llc-5F-1xl"/>
+                        <outlet property="calculationResultLabel" destination="oa7-Bn-tIY" id="YS0-NF-VYQ"/>
                         <outlet property="textField1" destination="zTv-GZ-XsI" id="DGU-aR-6Hx"/>
                         <outlet property="textField2" destination="qzf-Ce-7Cj" id="ULy-Li-2z0"/>
                     </connections>
