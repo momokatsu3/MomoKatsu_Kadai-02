@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -57,7 +57,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hbG-VS-dfO" userLabel="Segmented Control">
-                                <rect key="frame" x="96.666666666666686" y="222" width="199.99999999999994" height="41"/>
+                                <rect key="frame" x="96.666666666666686" y="222" width="200" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="cys-WP-gAz"/>
                                     <constraint firstAttribute="height" constant="40" id="nMh-Hw-WUj"/>
@@ -69,9 +69,6 @@
                                     <segment title="÷"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" systemColor="systemCyanColor"/>
-                                <connections>
-                                    <action selector="actionSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="0jv-Jl-g08"/>
-                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -90,9 +87,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="CalculationResults" destination="oa7-Bn-tIY" id="Llc-5F-1xl"/>
-                        <outlet property="hensu_1" destination="zTv-GZ-XsI" id="nnm-pJ-aNp"/>
-                        <outlet property="hensu_2" destination="qzf-Ce-7Cj" id="faW-C2-Iry"/>
+                        <outlet property="calculationResultLabel" destination="oa7-Bn-tIY" id="YS0-NF-VYQ"/>
+                        <outlet property="segmentedControl" destination="hbG-VS-dfO" id="PLf-VG-8mg"/>
+                        <outlet property="textField1" destination="zTv-GZ-XsI" id="DGU-aR-6Hx"/>
+                        <outlet property="textField2" destination="qzf-Ce-7Cj" id="ULy-Li-2z0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
